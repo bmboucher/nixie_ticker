@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -63,20 +63,20 @@
 <circle x="0" y="0" radius="9.25" width="0.127" layer="21"/>
 <circle x="0" y="0" radius="5.5" width="0.127" layer="51"/>
 <text x="0" y="-3" size="1.27" layer="51" font="vector" align="center">FRONT</text>
-<pad name="P$1" x="0" y="5.5" drill="0.5"/>
-<pad name="P$2" x="2.556" y="4.87" drill="0.5"/>
-<pad name="P$3" x="4.5264" y="3.1244" drill="0.5"/>
-<pad name="P$4" x="5.4599" y="0.663" drill="0.5"/>
+<pad name="P$1" x="0" y="5.5" drill="1"/>
+<pad name="P$2" x="2.556" y="4.87" drill="1"/>
+<pad name="P$3" x="4.5264" y="3.1244" drill="1"/>
+<pad name="P$4" x="5.4599" y="0.663" drill="1"/>
 <circle x="0" y="0" radius="5.5" width="0.127" layer="51"/>
-<pad name="P$6" x="3.6472" y="-4.1168" drill="0.5"/>
-<pad name="P$5" x="5.1426" y="-1.9503" drill="0.5"/>
-<pad name="P$7" x="1.3162" y="-5.3402" drill="0.5"/>
-<pad name="P$8" x="-1.3162" y="-5.3402" drill="0.5"/>
-<pad name="P$9" x="-3.6472" y="-4.1168" drill="0.5"/>
-<pad name="P$10" x="-5.1426" y="-1.9503" drill="0.5"/>
-<pad name="P$11" x="-5.4599" y="0.663" drill="0.5"/>
-<pad name="P$12" x="-4.5264" y="3.1244" drill="0.5"/>
-<pad name="P$13" x="-2.556" y="4.87" drill="0.5"/>
+<pad name="P$6" x="3.6472" y="-4.1168" drill="1"/>
+<pad name="P$5" x="5.1426" y="-1.9503" drill="1"/>
+<pad name="P$7" x="1.3162" y="-5.3402" drill="1"/>
+<pad name="P$8" x="-1.3162" y="-5.3402" drill="1"/>
+<pad name="P$9" x="-3.6472" y="-4.1168" drill="1"/>
+<pad name="P$10" x="-5.1426" y="-1.9503" drill="1"/>
+<pad name="P$11" x="-5.4599" y="0.663" drill="1"/>
+<pad name="P$12" x="-4.5264" y="3.1244" drill="1"/>
+<pad name="P$13" x="-2.556" y="4.87" drill="1"/>
 <text x="0" y="7.5" size="2.54" layer="21" font="vector" align="center">A</text>
 <wire x1="0" y1="-2" x2="0" y2="4" width="0.127" layer="21"/>
 <wire x1="-2" y1="2" x2="0" y2="4" width="0.127" layer="21"/>
