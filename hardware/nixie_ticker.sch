@@ -43,8 +43,15 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -57,6 +64,83 @@
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
+<layer number="101" name="Patch_Top" color="12" fill="4" visible="yes" active="yes"/>
+<layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="103" name="tMap" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="104" name="Name" color="16" fill="1" visible="yes" active="yes"/>
+<layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="108" name="tplace-old" color="10" fill="1" visible="yes" active="yes"/>
+<layer number="109" name="ref-old" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="113" name="IDFDebug" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
+<layer number="203" name="203bmp" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="204" name="204bmp" color="5" fill="10" visible="yes" active="yes"/>
+<layer number="205" name="205bmp" color="6" fill="10" visible="yes" active="yes"/>
+<layer number="206" name="206bmp" color="7" fill="10" visible="yes" active="yes"/>
+<layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
+<layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
+<layer number="209" name="209bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="210" name="210bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="211" name="211bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="212" name="212bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="213" name="213bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="214" name="214bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="215" name="215bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="216" name="216bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
+<layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
+<layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
+<layer number="220" name="220bmp" color="21" fill="1" visible="no" active="no"/>
+<layer number="221" name="221bmp" color="22" fill="1" visible="no" active="no"/>
+<layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
+<layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
+<layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="225" name="225bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="226" name="226bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="227" name="227bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="228" name="228bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="231" name="231bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
+<layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
+<layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -4780,6 +4864,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="P+17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="U$23" library="nixie_ticker" deviceset="TLP387" device=""/>
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="P+13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
+<part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4852,6 +4938,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="P+17" gate="1" x="96.52" y="55.88"/>
 <instance part="U$23" gate="G$1" x="104.14" y="45.72" rot="MR0"/>
 <instance part="GND17" gate="1" x="111.76" y="27.94"/>
+<instance part="P+13" gate="1" x="-76.2" y="-104.14"/>
+<instance part="GND13" gate="1" x="-76.2" y="-116.84"/>
 </instances>
 <busses>
 </busses>
@@ -5080,6 +5168,11 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <segment>
 <pinref part="R14" gate="G$1" pin="1"/>
 <pinref part="GND17" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND13" gate="1" pin="GND"/>
+<wire x1="-73.66" y1="-111.76" x2="-76.2" y2="-111.76" width="0.1524" layer="91"/>
+<wire x1="-76.2" y1="-111.76" x2="-76.2" y2="-114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -5556,14 +5649,14 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="-40.64" y1="2.54" x2="-38.1" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="-38.1" y1="2.54" x2="-38.1" y2="-48.26" width="0.1524" layer="91"/>
 <wire x1="-38.1" y1="-48.26" x2="-35.56" y2="-48.26" width="0.1524" layer="91"/>
-<pinref part="U$4" gate="G$1" pin="Q2"/>
-<wire x1="-35.56" y1="-48.26" x2="-33.02" y2="-50.8" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="Q5"/>
+<wire x1="-35.56" y1="-48.26" x2="-25.4" y2="-50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$43" class="0">
 <segment>
-<pinref part="U$4" gate="G$1" pin="Q1"/>
-<wire x1="-35.56" y1="-50.8" x2="-33.02" y2="-45.72" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="Q2"/>
+<wire x1="-33.02" y1="-50.8" x2="-33.02" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="-33.02" y1="-45.72" x2="-35.56" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="-35.56" y1="-45.72" x2="-35.56" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="U$14" gate="G$1" pin="+"/>
@@ -5581,8 +5674,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </net>
 <net name="N$45" class="0">
 <segment>
-<pinref part="U$4" gate="G$1" pin="Q4"/>
-<wire x1="-27.94" y1="-50.8" x2="-27.94" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="Q6"/>
+<wire x1="-22.86" y1="-50.8" x2="-27.94" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="-27.94" y1="-27.94" x2="-17.78" y2="-27.94" width="0.1524" layer="91"/>
 <pinref part="U$6" gate="G$1" pin="I2"/>
 <wire x1="-17.78" y1="-27.94" x2="-17.78" y2="-20.32" width="0.1524" layer="91"/>
@@ -5590,8 +5683,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </net>
 <net name="N$46" class="0">
 <segment>
-<pinref part="U$4" gate="G$1" pin="Q5"/>
-<wire x1="-25.4" y1="-50.8" x2="-25.4" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="Q7"/>
+<wire x1="-20.32" y1="-50.8" x2="-25.4" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="-30.48" x2="-15.24" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="U$6" gate="G$1" pin="I4"/>
 <wire x1="-15.24" y1="-30.48" x2="-15.24" y2="-20.32" width="0.1524" layer="91"/>
@@ -5599,8 +5692,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </net>
 <net name="N$48" class="0">
 <segment>
-<pinref part="U$4" gate="G$1" pin="Q6"/>
-<wire x1="-22.86" y1="-50.8" x2="-22.86" y2="-33.02" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="Q4"/>
+<wire x1="-27.94" y1="-50.8" x2="-22.86" y2="-33.02" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="-33.02" x2="-12.7" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="U$6" gate="G$1" pin="I8"/>
 <wire x1="-12.7" y1="-33.02" x2="-12.7" y2="-20.32" width="0.1524" layer="91"/>
@@ -5608,8 +5701,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </net>
 <net name="N$49" class="0">
 <segment>
-<pinref part="U$4" gate="G$1" pin="Q7"/>
-<wire x1="-20.32" y1="-50.8" x2="-20.32" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="Q1"/>
+<wire x1="-35.56" y1="-50.8" x2="-20.32" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="-35.56" x2="2.54" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="-35.56" x2="2.54" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="U$18" gate="G$1" pin="+"/>
@@ -5834,6 +5927,11 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="P+17" gate="1" pin="V+"/>
 <pinref part="U$23" gate="G$1" pin="C"/>
 <wire x1="96.52" y1="53.34" x2="96.52" y2="48.26" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="-73.66" y1="-109.22" x2="-76.2" y2="-109.22" width="0.1524" layer="91"/>
+<pinref part="P+13" gate="1" pin="V+"/>
+<wire x1="-76.2" y1="-109.22" x2="-76.2" y2="-106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$103" class="0">
