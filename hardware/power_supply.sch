@@ -10297,10 +10297,10 @@ grid 5.08 mm</description>
 <part name="U$6" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="ZKFDS" device="" package3d_urn="urn:adsk.eagle:package:3857947/3"/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="U$7" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="AP1507" device="" package3d_urn="urn:adsk.eagle:package:4010820/1"/>
+<part name="U2" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="AP1507" device="" package3d_urn="urn:adsk.eagle:package:4010820/1"/>
 <part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="C5" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="UUR1C221MCL6GS" device="" package3d_urn="urn:adsk.eagle:package:3945414/1"/>
-<part name="U$8" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="B260A-13-F" device="" package3d_urn="urn:adsk.eagle:package:4010839/1"/>
+<part name="D3" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="B260A-13-F" device="" package3d_urn="urn:adsk.eagle:package:4010839/1"/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$9" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="RLB9013" device="" package3d_urn="urn:adsk.eagle:package:4010895/3"/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -10357,10 +10357,10 @@ grid 5.08 mm</description>
 <instance part="U$6" gate="G$1" x="86.36" y="58.42"/>
 <instance part="P+4" gate="1" x="96.52" y="63.5" rot="R270"/>
 <instance part="GND12" gate="1" x="96.52" y="58.42" rot="R90"/>
-<instance part="U$7" gate="G$1" x="121.92" y="38.1"/>
+<instance part="U2" gate="G$1" x="121.92" y="38.1"/>
 <instance part="P+5" gate="1" x="96.52" y="35.56" rot="R90"/>
 <instance part="C5" gate="G$1" x="30.48" y="78.74"/>
-<instance part="U$8" gate="G$1" x="137.16" y="33.02" rot="R90"/>
+<instance part="D3" gate="G$1" x="137.16" y="33.02" rot="R90"/>
 <instance part="GND13" gate="1" x="121.92" y="22.86"/>
 <instance part="U$9" gate="G$1" x="142.24" y="38.1"/>
 <instance part="P+6" gate="1" x="149.86" y="58.42"/>
@@ -10465,11 +10465,11 @@ grid 5.08 mm</description>
 <pinref part="GND12" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U$7" gate="G$1" pin="GND"/>
-<pinref part="U$8" gate="G$1" pin="A"/>
+<pinref part="U2" gate="G$1" pin="GND"/>
+<pinref part="D3" gate="G$1" pin="A"/>
 <wire x1="137.16" y1="30.48" x2="137.16" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="25.4" x2="127" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="SD"/>
+<pinref part="U2" gate="G$1" pin="SD"/>
 <wire x1="116.84" y1="25.4" x2="121.92" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 <wire x1="121.92" y1="25.4" x2="127" y2="25.4" width="0.1524" layer="91"/>
@@ -10603,16 +10603,16 @@ grid 5.08 mm</description>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="U$7" gate="G$1" pin="OUT"/>
+<pinref part="U2" gate="G$1" pin="OUT"/>
 <wire x1="134.62" y1="38.1" x2="137.16" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="U$9" gate="G$1" pin="1"/>
-<pinref part="U$8" gate="G$1" pin="C"/>
+<pinref part="D3" gate="G$1" pin="C"/>
 <wire x1="137.16" y1="35.56" x2="137.16" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="U$7" gate="G$1" pin="VIN"/>
+<pinref part="U2" gate="G$1" pin="VIN"/>
 <pinref part="U$4" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -10624,7 +10624,7 @@ grid 5.08 mm</description>
 <pinref part="C6" gate="G$1" pin="+"/>
 <wire x1="149.86" y1="50.8" x2="149.86" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="38.1" x2="149.86" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="FB"/>
+<pinref part="U2" gate="G$1" pin="FB"/>
 <wire x1="121.92" y1="50.8" x2="149.86" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
