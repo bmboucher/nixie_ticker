@@ -99,16 +99,15 @@
                     },
                     "board_outline": true,
                     "config": {
-                        "description": "Top Silkscreen",
-                        "file_function": "Other"
+                        "file_function": "Paste",
+                        "layer_type": "top"
                     },
-                    "filename_format": "%PREFIX%.GTO",
+                    "filename_format": "%PREFIX%.GTP",
                     "layers": [
-                        21,
-                        25
+                        31
                     ],
                     "milling": false,
-                    "name": "Top Silkscreen",
+                    "name": "Top Paste",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -122,15 +121,38 @@
                     },
                     "board_outline": true,
                     "config": {
-                        "description": "Top Paste",
-                        "file_function": "Other"
+                        "file_function": "Paste",
+                        "layer_type": "Bottom"
                     },
-                    "filename_format": "%PREFIX%.GTP",
+                    "filename_format": "%PREFIX%.GBP",
                     "layers": [
-                        31
+                        32
                     ],
                     "milling": false,
-                    "name": "Top Paste",
+                    "name": "Bottom Paste",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
+                },
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": true,
+                    "config": {
+                        "description": "Top Silkscreen",
+                        "file_function": "Other"
+                    },
+                    "filename_format": "%PREFIX%.GTO",
+                    "layers": [
+                        21,
+                        25
+                    ],
+                    "milling": false,
+                    "name": "Top Silkscreen",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -167,15 +189,15 @@
                     },
                     "board_outline": true,
                     "config": {
-                        "description": "Bottom Soldermask",
+                        "description": "Top Soldermask",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.GBS",
+                    "filename_format": "%PREFIX%.GTS",
                     "layers": [
-                        30
+                        29
                     ],
                     "milling": false,
-                    "name": "Bottom Soldermask",
+                    "name": "Top Soldermask",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -189,15 +211,15 @@
                     },
                     "board_outline": true,
                     "config": {
-                        "description": "Top Soldermask",
+                        "description": "Bottom Soldermask",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.GTS",
+                    "filename_format": "%PREFIX%.GBS",
                     "layers": [
-                        29
+                        30
                     ],
                     "milling": false,
-                    "name": "Top Soldermask",
+                    "name": "Bottom Soldermask",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -227,7 +249,7 @@
             "version": "RS274X"
         }
     ],
-    "timestamp": "2018-07-10T12:10:08",
+    "timestamp": "2018-08-12T13:06:19",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"

@@ -21,18 +21,18 @@
                         "PTH": true,
                         "VIA": true
                     },
-                    "filename_format": "nixie_power_supply.drills.xln",
+                    "filename_format": "nixie_ticker.TXT",
                     "layers": {
                         "from": 1,
                         "to": 16
                     },
-                    "name": "Excellon Drill",
+                    "name": "Drill File",
                     "type": "excellon"
                 }
             ]
         },
         {
-            "filename_prefix": "nixie_power_supply",
+            "filename_prefix": "nixie_ticker",
             "format_specifier": {
                 "decimal": 4,
                 "integer": 3
@@ -48,63 +48,20 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": false,
+                    "board_outline": true,
                     "config": {
-                        "description": "Top Solder Paste",
+                        "description": "Top Copper",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.tcream.ger",
-                    "layers": [
-                        31
-                    ],
-                    "milling": false,
-                    "name": "Top Solder Paste",
-                    "polarity": "positive",
-                    "type": "gerber_layer"
-                },
-                {
-                    "advanced_options": {
-                        "mirror": false,
-                        "offset_x": 0,
-                        "offset_y": 0,
-                        "rotate": false,
-                        "upside_down": false
-                    },
-                    "board_outline": false,
-                    "config": {
-                        "description": "Bottom Solder Paste",
-                        "file_function": "Other"
-                    },
-                    "filename_format": "%PREFIX%.bcream.ger",
-                    "layers": [
-                        32
-                    ],
-                    "milling": false,
-                    "name": "Bottom Solder Paste",
-                    "polarity": "positive",
-                    "type": "gerber_layer"
-                },
-                {
-                    "advanced_options": {
-                        "mirror": false,
-                        "offset_x": 0,
-                        "offset_y": 0,
-                        "rotate": false,
-                        "upside_down": false
-                    },
-                    "board_outline": false,
-                    "config": {
-                        "description": "Top Copper Layer",
-                        "file_function": "Other"
-                    },
-                    "filename_format": "%PREFIX%.toplayer.ger",
+                    "filename_format": "%PREFIX%.GTL",
                     "layers": [
                         1,
                         17,
-                        18
+                        18,
+                        20
                     ],
                     "milling": false,
-                    "name": "Top Copper Layer",
+                    "name": "Top Copper",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -116,19 +73,19 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": false,
+                    "board_outline": true,
                     "config": {
-                        "description": "Bottom Copper Layer",
+                        "description": "Bottom Copper",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.bottomlayer.ger",
+                    "filename_format": "%PREFIX%.GBL",
                     "layers": [
                         16,
                         17,
                         18
                     ],
                     "milling": false,
-                    "name": "Bottom Copper Layer",
+                    "name": "Bottom Copper",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -140,18 +97,18 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": false,
+                    "board_outline": true,
                     "config": {
-                        "description": "Top Silkscreen ",
+                        "description": "Top Silkscreen",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.topsilkscreen.ger",
+                    "filename_format": "%PREFIX%.GTO",
                     "layers": [
                         21,
                         25
                     ],
                     "milling": false,
-                    "name": "Top Silkscreen ",
+                    "name": "Top Silkscreen",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -163,18 +120,40 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": false,
+                    "board_outline": true,
                     "config": {
-                        "description": "Bottom Silk screen",
+                        "description": "Top Paste",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.bottomsilkscreen.ger",
+                    "filename_format": "%PREFIX%.GTP",
+                    "layers": [
+                        31
+                    ],
+                    "milling": false,
+                    "name": "Top Paste",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
+                },
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": true,
+                    "config": {
+                        "description": "Bottom Silkscreen",
+                        "file_function": "Other"
+                    },
+                    "filename_format": "%PREFIX%.GBO",
                     "layers": [
                         22,
                         26
                     ],
                     "milling": false,
-                    "name": "Bottom Silk screen",
+                    "name": "Bottom Silkscreen",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -186,39 +165,17 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": false,
+                    "board_outline": true,
                     "config": {
-                        "description": "Top Solder Mask",
+                        "description": "Bottom Soldermask",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.topsoldermask.ger",
-                    "layers": [
-                        29
-                    ],
-                    "milling": false,
-                    "name": "Top Solder Mask",
-                    "polarity": "positive",
-                    "type": "gerber_layer"
-                },
-                {
-                    "advanced_options": {
-                        "mirror": false,
-                        "offset_x": 0,
-                        "offset_y": 0,
-                        "rotate": false,
-                        "upside_down": false
-                    },
-                    "board_outline": false,
-                    "config": {
-                        "description": "Bottom Solder Mask",
-                        "file_function": "Other"
-                    },
-                    "filename_format": "%PREFIX%.bottomsoldermask.ger",
+                    "filename_format": "%PREFIX%.GBS",
                     "layers": [
                         30
                     ],
                     "milling": false,
-                    "name": "Bottom Solder Mask",
+                    "name": "Bottom Soldermask",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -230,26 +187,47 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": false,
+                    "board_outline": true,
                     "config": {
-                        "description": "Board Outline",
+                        "description": "Top Soldermask",
                         "file_function": "Other"
                     },
-                    "filename_format": "%PREFIX%.boardoutline.ger",
+                    "filename_format": "%PREFIX%.GTS",
                     "layers": [
-                        20,
+                        29
+                    ],
+                    "milling": false,
+                    "name": "Top Soldermask",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
+                },
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": true,
+                    "config": {
+                        "description": "Mill Layer",
+                        "file_function": "Other"
+                    },
+                    "filename_format": "%PREFIX%.GML",
+                    "layers": [
                         46
                     ],
                     "milling": false,
-                    "name": "Board Outline",
+                    "name": "Mill Layer",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 }
             ],
-            "version": "X2"
+            "version": "RS274X"
         }
     ],
-    "timestamp": "2018-07-16T20:49:10",
+    "timestamp": "2018-07-16T21:15:10",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
