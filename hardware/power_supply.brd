@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.0">
+<eagle version="9.1.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -60,7 +60,7 @@
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYTY5OTEw" projecturn="a.cGVyc29uYWw6dWUyYTY5OTEwIzIwMTgwNjMwMTM4MzExNzgx" f3durn="urn:adsk.wipprod:dm.lineage:bjyJQ3K9ReGs7_9rgABCYQ" pcbguid="75b782bf-6294-4662-834a-dbb7a3b1e7c4" lastpulledtime="" lastsyncedchangeguid="2b0cb051-b83e-ff9d-b6c3-e3135e7d276c"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYTY5OTEw" projecturn="a.cGVyc29uYWw6dWUyYTY5OTEwIzIwMTgwNjMwMTM4MzExNzgx" f3durn="urn:adsk.wipprod:dm.lineage:bjyJQ3K9ReGs7_9rgABCYQ" pcbguid="75b782bf-6294-4662-834a-dbb7a3b1e7c4" lastpulledtime="" lastsyncedchangeguid="92a7509f-8092-85b7-5944-d73b82e3d907"/>
 <plain>
 <wire x1="0" y1="0" x2="76.2" y2="0" width="0" layer="20"/>
 <wire x1="76.2" y1="0" x2="76.2" y2="38.1" width="0" layer="20"/>
@@ -3917,8 +3917,8 @@ design rules under a new name.</description>
 </signal>
 </signals>
 <mfgpreviewcolors>
-<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
-<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8FF0000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFFFFFF"/>
 <mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
