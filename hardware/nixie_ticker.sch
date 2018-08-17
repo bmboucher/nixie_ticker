@@ -265,7 +265,7 @@
 <smd name="3" x="4.75" y="-1.27" dx="1.3" dy="0.8" layer="1"/>
 <smd name="4" x="4.75" y="1.27" dx="1.3" dy="0.8" layer="1"/>
 </package>
-<package name="CAPAE830X1050" urn="urn:adsk.eagle:footprint:3945417/1" library_version="42">
+<package name="CAPAE830X1050" urn="urn:adsk.eagle:footprint:3945417/1" library_version="43">
 <description>ECAP (ALUMINUM ELECTROLYTIC CAPACITOR), 8.3 X 10.5 mm body
 &lt;p&gt;ECAP (ALUMINUM ELECTROLYTIC CAPACITOR) package with body size 8.3 X 10.5 mm&lt;/p&gt;</description>
 <wire x1="-4.25" y1="1.3141" x2="-4.25" y2="2.655" width="0.12" layer="21"/>
@@ -294,7 +294,7 @@
 <packageinstance name="SOP254P1000X215-4"/>
 </packageinstances>
 </package3d>
-<package3d name="IN14-12PIN" urn="urn:adsk.eagle:package:4247593/2" type="box" library_version="42">
+<package3d name="IN14-12PIN" urn="urn:adsk.eagle:package:4247593/4" type="model" library_version="43">
 <packageinstances>
 <packageinstance name="IN14-12PIN"/>
 </packageinstances>
@@ -319,7 +319,7 @@
 <packageinstance name="ZKFDS"/>
 </packageinstances>
 </package3d>
-<package3d name="CAPAE830X1050" urn="urn:adsk.eagle:package:3945414/1" type="model" library_version="42">
+<package3d name="CAPAE830X1050" urn="urn:adsk.eagle:package:3945414/1" type="model" library_version="43">
 <description>ECAP (ALUMINUM ELECTROLYTIC CAPACITOR), 8.3 X 10.5 mm body
 &lt;p&gt;ECAP (ALUMINUM ELECTROLYTIC CAPACITOR) package with body size 8.3 X 10.5 mm&lt;/p&gt;</description>
 <packageinstances>
@@ -456,7 +456,7 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="IN14_12PIN" urn="urn:adsk.eagle:component:4247601/1" library_version="42">
+<deviceset name="IN14_12PIN" urn="urn:adsk.eagle:component:4247601/2" library_version="43">
 <gates>
 <gate name="G$1" symbol="NIXIE_12PIN" x="0" y="0"/>
 </gates>
@@ -477,7 +477,7 @@
 <connect gate="G$1" pin="PR" pad="P$2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:4247593/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:4247593/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -604,7 +604,7 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="UUR1C221MCL6GS" urn="urn:adsk.eagle:component:3945424/3" library_version="42">
+<deviceset name="UUR1C221MCL6GS" urn="urn:adsk.eagle:component:3945424/3" library_version="43">
 <gates>
 <gate name="G$1" symbol="C-US" x="0" y="0"/>
 </gates>
@@ -10233,27 +10233,27 @@ Source: www.kingbright.com</description>
 </class>
 </classes>
 <parts>
-<part name="N1" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/2"/>
-<part name="N2" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/2"/>
+<part name="N1" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/4"/>
+<part name="N2" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/4"/>
 <part name="U1" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="K155ID1" device="" package3d_urn="urn:adsk.eagle:package:3857950/2"/>
 <part name="U2" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="K155ID1" device="" package3d_urn="urn:adsk.eagle:package:3857950/2"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="N3" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/2"/>
+<part name="N3" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/4"/>
 <part name="U3" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="K155ID1" device="" package3d_urn="urn:adsk.eagle:package:3857950/2"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="N4" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/2"/>
+<part name="N4" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/4"/>
 <part name="U4" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="K155ID1" device="" package3d_urn="urn:adsk.eagle:package:3857950/2"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="N5" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/2"/>
+<part name="N5" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/4"/>
 <part name="U5" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="K155ID1" device="" package3d_urn="urn:adsk.eagle:package:3857950/2"/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="N6" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/2"/>
+<part name="N6" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="IN14_12PIN" device="12PIN" package3d_urn="urn:adsk.eagle:package:4247593/4"/>
 <part name="U6" library="nixie_ticker" library_urn="urn:adsk.eagle:library:3857935" deviceset="K155ID1" device="" package3d_urn="urn:adsk.eagle:package:3857950/2"/>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
