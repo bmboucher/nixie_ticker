@@ -114,7 +114,7 @@ void NixieDisplay::write(const std::string& str) {
 			if (nixie >= NUM_NIXIES) break;
 			uint8_t digit = c - '0';
 			//std::cout << "Setting digit " << (int)nixie << " to value " << (int)digit << std::endl;
-			set_nixie_digit(nixie, c - '0'); nixie++; anode_flag = true;
+			set_nixie_digit(nixie, digit); nixie++; anode_flag = true;
 		} else if (c == '.') {
 			//std::cout << "Turning on decimal point " << (int)nixie << std::endl; 
 			set_decimal_point(nixie, true); anode_flag = true;
