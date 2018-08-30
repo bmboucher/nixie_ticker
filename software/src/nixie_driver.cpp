@@ -98,7 +98,7 @@ void NixieDisplay::write(const std::string& str) {
 	size_t i = 0;
 	char c = 0;
 	uint8_t nixie = 0;
-	bool anode = false;
+	bool anode_flag = false;
 	bool found_break = false;
 	for (uint8_t dp = 0; dp < NUM_NIXIES; dp++) {
 		set_decimal_point(dp, false);
@@ -109,9 +109,9 @@ void NixieDisplay::write(const std::string& str) {
 		if (c == 'X') {
 			set_nixie_digit(nixie, 10); nixie++;
 		} else if (c >= '0' && c <= '9') {
-			set_nixie_digit(nixie, c - '0'); anode = true;
+			set_nixie_digit(nixie, c - '0'); anode_flag = true;
 		} else if (c == '.') {
-			set_decimal_point(nixie, true); anode = true;
+			set_decimal_point(nixie, true); anode_flag = true;
 		} else if (c == ' ') {
 			found_break = true; break;
 		}
@@ -126,6 +126,7 @@ void NixieDisplay::write(const std::string& str) {
 		i++;
 		set_led(led, c != '0');
 	}
+	set_anode(anode_flag);
 	update();
 }
 
