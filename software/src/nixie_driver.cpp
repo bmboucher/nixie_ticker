@@ -84,7 +84,9 @@ void NixieDisplay::set_led(uint8_t led, bool on) {
 }
 
 void test_single_register(NixieDisplay& display, uint8_t reg) {
-	display.set_register(reg, !display.get_register(reg));
+	bool curr_setting = display.get_register(reg);
+	std::cout << "\tFLIPPING REGISTER " << reg << " (CURRENTLY " << curr_setting << ")" << std::endl;
+	display.set_register(reg, !curr_setting);
 	display.update();
 }
 
