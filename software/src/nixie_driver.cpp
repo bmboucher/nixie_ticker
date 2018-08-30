@@ -75,7 +75,9 @@ void NixieDisplay::set_anode(bool on) {
 }
 
 void NixieDisplay::set_nixie_digit(uint8_t nixie, uint8_t digit) {
-	digit = (digit == 1) ? 0 : 11 - digit;
+	if (digit <= 9) {
+		digit = (digit == 1) ? 0 : 11 - digit;
+	}
 	for (uint8_t bit = 0; bit < 4; bit++) {
 		set_register(NIXIES[nixie][bit], digit & 1);
 		digit = digit >> 1;
