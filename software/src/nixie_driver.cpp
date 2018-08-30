@@ -11,7 +11,7 @@ const uint32_t DATA_PIN  = 14;
 const uint8_t NUM_NIXIES = 6;
 const uint8_t NUM_REGISTERS = 40;
 const double CLK_DELAY = 1e-5;
-const uint8_t NIXIES[][] = 
+const uint8_t NIXIES[][4] = 
 	{{ 3,  4,  5,  0},
 	 { 8, 10, 11,  9},
 	 {14, 13, 18, 15},
@@ -33,7 +33,6 @@ NixieDisplay::NixieDisplay() {
 	} else {
 		std::cerr << "Failed to initialize PIGPIO: return code " << pi << std::endl;
 	}
-	return pi;
 }
 
 bool NixieDisplay::get_register(uint8_t reg) {
@@ -54,7 +53,7 @@ void NixieDisplay::set_register(uint8_t reg, bool on) {
 void NixieDisplay::update() {
 	if (pi < 0) return;
 	uint64_t bin = registers;
-	for (uint32_t cycle = 0; cycle < REGISTERS; cycle++) {
+	for (uint32_t cycle = 0; cycle < NUM_REGISTERS; cycle++) {
 		gpio_write(pi, DATA_PIN, bin & 1);
 		time_sleep(CLK_DELAY);
 		gpio_write(pi, CLK_PIN, 1);
@@ -96,10 +95,7 @@ void test_led_counter(NixieDisplay& display, uint32_t counter) {
 }
 
 int main(void) {
-	NixieDisplay display();
-	if (pi < 0) {
-		std::cerr << "ERROR CODE: " << pi << std::endl;
-	} else {
+	NixieDisplay display;
 		uint32_t counter = 1;
 		while (counter < 1000) {
 			test_led_counter(display, counter);
@@ -112,5 +108,4 @@ int main(void) {
 			std::cin >> reg;
 			test_single_register(display, reg);
 		}
-	}
 }
