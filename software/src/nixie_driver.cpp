@@ -103,13 +103,15 @@ void NixieDisplay::write(const std::string& str) {
 	for (uint8_t dp = 0; dp < NUM_NIXIES; dp++) {
 		set_decimal_point(dp, false);
 	}
-	while (i < str.size() && nixie < NUM_NIXIES) {
+	while (i < str.size()) {
 		c = str[i];
 		i++;
 		if (c == 'X') {
+			if (nixie >= NUM_NIXIES) break;
 			std::cout << "Setting digit " << (int)nixie << " to blank" << std::endl;
 			set_nixie_digit(nixie, 10); nixie++;
 		} else if (c >= '0' && c <= '9') {
+			if (nixie >= NUM_NIXIES) break;
 			uint8_t digit = c - '0';
 			std::cout << "Setting digit " << (int)nixie << " to value " << (int)digit << std::endl;
 			set_nixie_digit(nixie, c - '0'); nixie++; anode_flag = true;
