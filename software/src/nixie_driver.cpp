@@ -85,6 +85,7 @@ void NixieDisplay::set_led(uint8_t led, bool on) {
 
 void test_single_register(NixieDisplay& display, uint8_t reg) {
 	display.set_register(reg, !display.get_register(reg));
+	display.update();
 }
 
 void test_led_counter(NixieDisplay& display, uint32_t counter) {
@@ -92,6 +93,7 @@ void test_led_counter(NixieDisplay& display, uint32_t counter) {
 		display.set_led(led_num, counter & 1);
 		counter = counter >> 1;
 	}
+	display.update();
 }
 
 int main(void) {
