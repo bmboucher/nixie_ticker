@@ -130,6 +130,7 @@ void NixieDisplay::write(const std::string& str) {
 		i++;
 		std::cout << "Setting LED " << (int)led << " to " << (c == '0' ? "OFF" : "ON") << std::endl;
 		set_led(led, c != '0');
+		led++;
 	}
 	set_anode(anode_flag);
 	update();
