@@ -108,15 +108,15 @@ void NixieDisplay::write(const std::string& str) {
 		i++;
 		if (c == 'X') {
 			if (nixie >= NUM_NIXIES) break;
-			std::cout << "Setting digit " << (int)nixie << " to blank" << std::endl;
+			//std::cout << "Setting digit " << (int)nixie << " to blank" << std::endl;
 			set_nixie_digit(nixie, 10); nixie++;
 		} else if (c >= '0' && c <= '9') {
 			if (nixie >= NUM_NIXIES) break;
 			uint8_t digit = c - '0';
-			std::cout << "Setting digit " << (int)nixie << " to value " << (int)digit << std::endl;
+			//std::cout << "Setting digit " << (int)nixie << " to value " << (int)digit << std::endl;
 			set_nixie_digit(nixie, c - '0'); nixie++; anode_flag = true;
 		} else if (c == '.') {
-			std::cout << "Turning on decimal point " << (int)nixie << std::endl; 
+			//std::cout << "Turning on decimal point " << (int)nixie << std::endl; 
 			set_decimal_point(nixie, true); anode_flag = true;
 		} else if (c == ' ') {
 			found_break = true; break;
@@ -160,8 +160,6 @@ int main(void) {
 		std::string input;
 		std::cout << "> " << std::flush;
 		getline(std::cin, input);
-		std::cout << std::endl;
-		std::cout << "\tINPUT = " << input << std::endl;
 		display.write(input);
 	}
 	/*
