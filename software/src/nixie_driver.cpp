@@ -30,6 +30,7 @@ NixieDisplay::NixieDisplay() {
 		gpio_write(pi, LATCH_PIN, 0);
 		gpio_write(pi, CLK_PIN, 0);
 		gpio_write(pi, DATA_PIN, 0);
+		update();
 	} else {
 		std::cerr << "Failed to initialize PIGPIO: return code " << pi << std::endl;
 	}
