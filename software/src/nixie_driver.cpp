@@ -20,6 +20,7 @@ const uint8_t NIXIES[][4] =
 	 {32, 38, 39, 37}};
 const uint8_t LEDS[] = {2, 7, 17, 20, 26, 34};
 const uint8_t DECIMAL_POINTS[] = {1, 6, 12, 19, 25, 33};
+const uint8_t ANODE = 35;
 
 NixieDisplay::NixieDisplay() {
 	pi = pigpio_start(NULL, NULL);
@@ -69,6 +70,10 @@ void NixieDisplay::update() {
 	time_sleep(CLK_DELAY);
 }
 
+void NixieDisplay::set_anode(bool on) {
+	set_register(ANODE, on);
+}
+
 void NixieDisplay::set_nixie_digit(uint8_t nixie, uint8_t digit) {
 	for (uint8_t bit = 0; bit < 4; bit++) {
 		set_register(NIXIES[nixie][bit], digit & 1);
@@ -82,6 +87,46 @@ void NixieDisplay::set_decimal_point(uint8_t nixie, bool on) {
 	
 void NixieDisplay::set_led(uint8_t led, bool on) {
 	set_register(LEDS[led], on);
+}
+
+/* Examples:
+ *   12.34.56 100101
+ *   XX1234
+ *   XXXXXX 000011
+ */
+void NixieDisplay::write(const std::string& str) {
+	size_t i = 0;
+	char c = 0;
+	uint8_t nixie = 0;
+	bool anode = false;
+	bool found_break = false;
+	for (uint8_t dp = 0; dp < NUM_NIXIES; dp++) {
+		set_decimal_point(dp, false);
+	}
+	while (i < str.size() && nixie < NUM_NIXIES) {
+		c = str[i];
+		i++;
+		if (c == 'X') {
+			set_nixie_digit(nixie, 10); nixie++;
+		} else if (c >= '0' && c <= '9') {
+			set_nixie_digit(nixie, c - '0'); anode = true;
+		} else if (c == '.') {
+			set_decimal_point(nixie, true); anode = true;
+		} else if (c == ' ') {
+			found_break = true; break;
+		}
+	}
+	if (!found_break) {
+		while (i < str.size() && str[i] != ' ') { i++; }
+		i++;
+	}
+	uint8_t led = 0;
+	while (i < str.size() && led < NUM_NIXIES) {
+		c = str[i];
+		i++;
+		set_led(led, c != '0');
+	}
+	update();
 }
 
 void test_single_register(NixieDisplay& display, uint8_t reg) {
@@ -99,8 +144,16 @@ void test_led_counter(NixieDisplay& display, uint32_t counter) {
 	display.update();
 }
 
+
 int main(void) {
 	NixieDisplay display;
+	while (true) {
+		std::string input;
+		std::cout << "> " << std::flush;
+		std::cin >> input;
+		display.write(input);
+	}
+	/*
 		uint32_t counter = 1;
 		while (counter < 1000) {
 			test_led_counter(display, counter);
@@ -113,4 +166,5 @@ int main(void) {
 			std::cin >> reg;
 			test_single_register(display, reg);
 		}
+	*/
 }

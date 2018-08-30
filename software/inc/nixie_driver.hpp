@@ -1,5 +1,6 @@
 #pragma once
 #include <stdint.h>
+#include <string>
 
 class NixieDisplay {
 private:
@@ -14,9 +15,13 @@ public:
 	
 	void update();
 	
+	void set_anode(bool on);
+	
 	void set_nixie_digit(uint8_t nixie, uint8_t digit);
 	
 	void set_decimal_point(uint8_t nixie, bool on);
 	
 	void set_led(uint8_t led, bool on);
+	
+	void write(const std::string& str);
 };
