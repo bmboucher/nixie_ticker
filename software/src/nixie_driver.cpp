@@ -91,7 +91,7 @@ int write_binary(int pi, uint64_t bin) {
 }
 
 void test_single_register(int pi, uint32_t reg) {
-	int result = write_binary(pi, 1 << reg);
+	int result = write_binary(pi, (uint64_t)1 << reg);
 	std::cout << "\tRETURN CODE = " << result << std::endl;
 }
 
@@ -115,7 +115,7 @@ int main(void) {
 	} else {
 		write_binary(pi, 0);
 		uint32_t counter = 1;
-		while (true) {
+		while (false) {
 			write_binary(pi, convert_counter(counter));
 			counter++;
 		}
