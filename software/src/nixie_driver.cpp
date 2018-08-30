@@ -107,7 +107,7 @@ int main(void) {
 			counter++;
 		}
 
-		uint8_t reg = 0;
+		int reg = 0;
 		while (true) {
 			std::cout << "Enter register: " << std::flush;
 			std::cin >> reg;
