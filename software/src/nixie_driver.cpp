@@ -96,7 +96,7 @@ void NixieDisplay::set_led(uint8_t led, bool on) {
  */
 void NixieDisplay::write(const std::string& str) {
 	size_t i = 0;
-	char c = 0;
+	uint8_t c = 0;
 	uint8_t nixie = 0;
 	bool anode_flag = false;
 	bool found_break = false;
@@ -107,10 +107,14 @@ void NixieDisplay::write(const std::string& str) {
 		c = str[i];
 		i++;
 		if (c == 'X') {
+			std::cout << "Setting digit " << (int)nixie << " to blank" << std::endl;
 			set_nixie_digit(nixie, 10); nixie++;
 		} else if (c >= '0' && c <= '9') {
-			set_nixie_digit(nixie, c - '0'); anode_flag = true;
+			uint8_t digit = c - '0';
+			std::cout << "Setting digit " << (int)nixie << " to value " << (int)digit << std::endl;
+			set_nixie_digit(nixie, c - '0'); nixie++; anode_flag = true;
 		} else if (c == '.') {
+			std::cout << "Turning on decimal point " << (int)nixie << std::endl; 
 			set_decimal_point(nixie, true); anode_flag = true;
 		} else if (c == ' ') {
 			found_break = true; break;
@@ -124,6 +128,7 @@ void NixieDisplay::write(const std::string& str) {
 	while (i < str.size() && led < NUM_NIXIES) {
 		c = str[i];
 		i++;
+		std::cout << "Setting LED " << (int)led << " to " << (c == '0' ? "OFF" : "ON") << std::endl;
 		set_led(led, c != '0');
 	}
 	set_anode(anode_flag);
@@ -152,6 +157,8 @@ int main(void) {
 		std::string input;
 		std::cout << "> " << std::flush;
 		std::cin >> input;
+		std::cout << std::endl;
+		std::cout << "\tINPUT = " << input << std::endl;
 		display.write(input);
 	}
 	/*
