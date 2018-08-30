@@ -130,7 +130,7 @@ void NixieDisplay::write(const std::string& str) {
 	while (i < str.size() && led < NUM_NIXIES) {
 		c = str[i];
 		i++;
-		std::cout << "Setting LED " << (int)led << " to " << (c == '0' ? "OFF" : "ON") << std::endl;
+		//std::cout << "Setting LED " << (int)led << " to " << (c == '0' ? "OFF" : "ON") << std::endl;
 		set_led(led, c != '0');
 		led++;
 	}
