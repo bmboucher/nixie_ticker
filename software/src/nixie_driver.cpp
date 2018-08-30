@@ -1,42 +1,28 @@
+#include <nixie_driver.hpp>
+
 #include <pigpiod_if2.h>
 #include <iostream>
 #include <stdint.h>
 #include <vector>
 
-const int pi = pigpio_start(NULL, NULL);
 const uint32_t LATCH_PIN = 3;
 const uint32_t CLK_PIN   = 2;
 const uint32_t DATA_PIN  = 14;
-const uint32_t REGISTERS = 40;
-const uint32_t CLK_DELAY = 10;
+const uint8_t NUM_NIXIES = 6;
+const uint8_t NUM_REGISTERS = 40;
+const double CLK_DELAY = 1e-5;
+const uint8_t NIXIES[][] = 
+	{{ 3,  4,  5,  0},
+	 { 8, 10, 11,  9},
+	 {14, 13, 18, 15},
+	 {16, 22, 23, 21},
+	 {27, 29, 30, 28},
+	 {32, 38, 39, 37}};
+const uint8_t LEDS[] = {2, 7, 17, 20, 26, 34};
+const uint8_t DECIMAL_POINTS[] = {1, 6, 12, 19, 25, 33};
 
-const gpioPulse_t clk_cycle{0, 0, CLK_DELAY};
-std::vector<gpioPulse_t> clk_pulses(2 * REGISTERS, clk_cycle);
-
-const gpioPulse_t blank_pulse{0, 0, 0};
-std::vector<gpioPulse_t> latch_pulses(3, blank_pulse);
-
-const gpioPulse_t data_pulse{0, 0, 2 * CLK_DELAY};
-std::vector<gpioPulse_t> data_pulses(REGISTERS, data_pulse);
-
-void generate_clock() {
-	for (uint32_t cycle = 0; cycle < REGISTERS; cycle++) {
-		clk_pulses[2 * cycle].gpioOff = 1 << CLK_PIN;
-		clk_pulses[2 * cycle + 1].gpioOn = 1 << CLK_PIN;
-	}
-}
-
-void generate_latch() {
-	latch_pulses[0].gpioOff = 1 << LATCH_PIN;
-	latch_pulses[0].usDelay = 2 * (REGISTERS + 1) * CLK_DELAY;
-	latch_pulses[1].gpioOn = 1 << LATCH_PIN;
-	latch_pulses[1].usDelay = CLK_DELAY;
-	latch_pulses[2].gpioOff = 1 << LATCH_PIN;
-	latch_pulses[2].usDelay = CLK_DELAY;
-}
-
-int initialize() {
-	int pi = pigpio_start(NULL, NULL);
+NixieDisplay::NixieDisplay() {
+	pi = pigpio_start(NULL, NULL);
 	if (pi >= 0) {
 		set_mode(pi, LATCH_PIN, PI_OUTPUT);
 		set_mode(pi, CLK_PIN, PI_OUTPUT);
@@ -44,89 +30,87 @@ int initialize() {
 		gpio_write(pi, LATCH_PIN, 0);
 		gpio_write(pi, CLK_PIN, 0);
 		gpio_write(pi, DATA_PIN, 0);
-		generate_clock();
-		generate_latch();
+	} else {
+		std::cerr << "Failed to initialize PIGPIO: return code " << pi << std::endl;
 	}
 	return pi;
 }
 
-void add_pulses(int pi, std::vector<gpioPulse_t>& pulses) {
-	wave_add_generic(pi, pulses.size(), pulses.data());
+bool NixieDisplay::get_register(uint8_t reg) {
+	uint64_t bitmask = (uint64_t)1 << (NUM_REGISTERS - reg - 1);
+	return registers & bitmask;
 }
 
-const double CLK_SLEEP = (double)(CLK_DELAY) / 1e6;
+void NixieDisplay::set_register(uint8_t reg, bool on) {
+	// Registers are stored reversed
+	uint64_t bitmask = (uint64_t)1 << (NUM_REGISTERS - reg - 1);
+	if (on) {
+		registers |= bitmask;
+	} else {
+		registers &= (~bitmask);
+	}
+}
 
-int write_binary(int pi, uint64_t bin) {
-	if (pi < 0) return -1;
-	std::vector<int> reversed(REGISTERS, false);
+void NixieDisplay::update() {
+	if (pi < 0) return;
+	uint64_t bin = registers;
 	for (uint32_t cycle = 0; cycle < REGISTERS; cycle++) {
-		reversed[REGISTERS - cycle - 1] = bin & 1;
+		gpio_write(pi, DATA_PIN, bin & 1);
+		time_sleep(CLK_DELAY);
+		gpio_write(pi, CLK_PIN, 1);
+		time_sleep(CLK_DELAY);
+		gpio_write(pi, CLK_PIN, 0);
 		bin = bin >> 1;
 	}
-	for (uint32_t cycle = 0; cycle < REGISTERS; cycle++) {
-		gpio_write(pi, DATA_PIN, reversed[cycle]);
-		time_sleep(CLK_SLEEP);
-		gpio_write(pi, CLK_PIN, 1);
-		time_sleep(CLK_SLEEP);
-		gpio_write(pi, CLK_PIN, 0);
-	}
-	time_sleep(CLK_SLEEP);
+	time_sleep(CLK_DELAY);
 	gpio_write(pi, LATCH_PIN, 1);
-	time_sleep(CLK_SLEEP);
+	time_sleep(CLK_DELAY);
 	gpio_write(pi, LATCH_PIN, 0);
-	return 0;
-	//wave_clear(pi);
-	//for (uint32_t cycle = 0; cycle < REGISTERS; cycle++) {
-	//	gpioPulse_t& data = data_pulses[REGISTERS - cycle - 1];
-	//	data.gpioOn = (bin & 1) ? (1 << DATA_PIN) : 0;
-	//	data.gpioOff = (bin & 1) ? 0 : (1 << DATA_PIN);
-	//	bin = bin >> 1;
-	//}
-	//add_pulses(pi, clk_pulses);
-	//add_pulses(pi, latch_pulses);
-	//add_pulses(pi, data_pulses);
-	//int wave_id = wave_create(pi);
-	//std::cout << "TOTAL us = " << wave_get_micros(pi) << std::endl;
-	//return wave_send_once(pi, wave_id);
+	time_sleep(CLK_DELAY);
 }
 
-void test_single_register(int pi, uint32_t reg) {
-	int result = write_binary(pi, (uint64_t)1 << reg);
-	std::cout << "\tRETURN CODE = " << result << std::endl;
+void NixieDisplay::set_nixie_digit(uint8_t nixie, uint8_t digit) {
+	for (uint8_t bit = 0; bit < 4; bit++) {
+		set_register(NIXIES[nixie][bit], digit & 1);
+		digit = digit >> 1;
+	}
+}
+	
+void NixieDisplay::set_decimal_point(uint8_t nixie, bool on) {
+	set_register(DECIMAL_POINTS[nixie], on);
+}
+	
+void NixieDisplay::set_led(uint8_t led, bool on) {
+	set_register(LEDS[led], on);
 }
 
-const uint64_t LEDS[] = {2, 7, 17, 20, 26, 34};
+void test_single_register(NixieDisplay& display, uint8_t reg) {
+	display.set_register(reg, !display.get_register(reg));
+}
 
-uint64_t convert_counter(uint32_t counter) {
-	uint64_t result = 0;
-	for (uint32_t led_num = 0; led_num < 6; led_num++) {
-		if (counter & 1) {
-			result |= ((uint64_t)1 << LEDS[led_num]);
-		}
+void test_led_counter(NixieDisplay& display, uint32_t counter) {
+	for (uint8_t led_num = 0; led_num < NUM_NIXIES; led_num++) {
+		display.set_led(led_num, counter & 1);
 		counter = counter >> 1;
 	}
-	return result;
 }
 
 int main(void) {
-	int pi = initialize();
+	NixieDisplay display();
 	if (pi < 0) {
 		std::cerr << "ERROR CODE: " << pi << std::endl;
 	} else {
-		write_binary(pi, 0);
 		uint32_t counter = 1;
-		while (false) {
-			write_binary(pi, convert_counter(counter));
+		while (counter < 1000) {
+			test_led_counter(display, counter);
 			counter++;
 		}
 
-		uint64_t reg = 0;
+		uint8_t reg = 0;
 		while (true) {
 			std::cout << "Enter register: " << std::flush;
 			std::cin >> reg;
-			std::cout << "\tFLIPPING REGISTER " << reg << std::endl;
-			test_single_register(pi, reg);
-			std::cout << "\tDONE" << std::endl;
+			test_single_register(display, reg);
 		}
 	}
 }
