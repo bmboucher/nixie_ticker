@@ -156,7 +156,7 @@ int main(void) {
 	while (true) {
 		std::string input;
 		std::cout << "> " << std::flush;
-		getline(std::cin, lines);
+		getline(std::cin, input);
 		std::cout << std::endl;
 		std::cout << "\tINPUT = " << input << std::endl;
 		display.write(input);
