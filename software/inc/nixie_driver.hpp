@@ -2,6 +2,10 @@
 #include <stdint.h>
 #include <string>
 
+namespace {
+	const uint8_t NUM_NIXIES = 6;
+}
+
 class NixieDisplay {
 private:
 	int pi;
