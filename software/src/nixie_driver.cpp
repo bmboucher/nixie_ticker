@@ -6,7 +6,6 @@
 const uint32_t LATCH_PIN = 3;
 const uint32_t CLK_PIN   = 2;
 const uint32_t DATA_PIN  = 14;
-const uint8_t NUM_NIXIES = 6;
 const uint8_t NUM_REGISTERS = 40;
 const double CLK_DELAY = 1e-5;
 const uint8_t NIXIES[][4] = 
