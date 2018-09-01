@@ -2,7 +2,7 @@ CC=g++
 CPP_FLAGS=-Wall -pthread -Iinc/ -fPIC
 LD_FLAGS=-lpigpiod_if2 -lrt
 
-all: bin/nixie_tester bin/nixie_demo lib/libnixie_driver.so
+all: bin/nixie_clock bin/nixie_tester bin/nixie_demo lib/libnixie_driver.so
 
 bin/%: obj/%.o lib/libnixie_driver.so
 	$(CC) $(CPP_FLAGS) $< -o $@ $(LD_FLAGS) -Llib/ -lnixie_driver
