@@ -19,7 +19,7 @@ typedef long long millis_t;
 const millis_t TICK_DELAY_MS = TICK_DELAY_SECONDS * 1000;
 const millis_t TICKER_SWITCH_MS = TICKER_SWITCH_SECONDS * 1000;
 
-uint8_t current_ticker = 0;
+size_t current_ticker = 0;
 millis_t last_tick = 0;
 millis_t last_ticker_switch = 0;
 
