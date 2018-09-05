@@ -35,7 +35,7 @@ int main(void)
 			if (res != CURLE_OK)
 				std::cerr << "curl_easy_perform() failed: "
 						  << curl_easy_strerror(res) << std::endl;
-			usleep(250000);
+			usleep(500000);
 		}
 				       
 		/* always cleanup */ 
