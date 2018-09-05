@@ -78,7 +78,9 @@ int main(int argc, char *argv[])
 		tickers.push_back("gs");
 		tickers.push_back("ge");
 		tickers.push_back("goog");
-		std::cout << "tickers[0] = " << tickers[0] << std::endl;
+		for (size_t i = 0; i < tickers.size(); i++) {
+			std::cout << "tickers[" << i << "] = " << tickers[i] << std::endl;
+		}
 	}
 	NixieDisplay display;
 	
