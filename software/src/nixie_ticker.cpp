@@ -27,7 +27,7 @@ int main(void)
 		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
 		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, display);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)&display);
 		/* Perform the request, res will get the return code */ 
 		for (int i = 0; i < 10; i++) {
 			std::cout << "REQUEST" << std::endl;
