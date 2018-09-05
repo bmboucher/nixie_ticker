@@ -67,20 +67,19 @@ std::vector<std::string> read_tickers(const char* path) {
 
 int main(int argc, char *argv[])
 {
-	std::vector<std::string> tickers((size_t)NUM_NIXIES);
+	std::vector<std::string> tickers;
 	if (argc > 1) {
 		tickers = read_tickers(argv[1]);
 	} else {
-		std::cout << "Adding tickers" << std::endl;
 		tickers.push_back("appl");
 		tickers.push_back("snap");
 		tickers.push_back("spy");
 		tickers.push_back("gs");
 		tickers.push_back("ge");
 		tickers.push_back("goog");
-		for (size_t i = 0; i < tickers.size(); i++) {
-			std::cout << "tickers[" << i << "] = " << tickers[i] << std::endl;
-		}
+	}
+	for (size_t i = 0; i < tickers.size(); i++) {
+		std::cout << "tickers[" << i << "] = " << tickers[i] << std::endl;
 	}
 	NixieDisplay display;
 	
@@ -101,13 +100,13 @@ int main(int argc, char *argv[])
 			if (timeMillis() - last_ticker_switch >= TICKER_SWITCH_MS) {
 				current_ticker += 1;
 				if (current_ticker == NUM_NIXIES) current_ticker = 0;
+				std::cout << "Switching to ticker " << tickers[current_ticker] << std::endl;
 				last_ticker_switch = timeMillis();
 			}
 			
 			if (timeMillis() - last_tick >= TICK_DELAY_MS) {
 				last_tick = timeMillis();
 				std::string url = "https://api.iextrading.com/1.0/stock/" + tickers[current_ticker] + "/price";
-				std::cout << url << std::endl;
 				curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 				res = curl_easy_perform(curl);
 				/* Check for errors */ 
