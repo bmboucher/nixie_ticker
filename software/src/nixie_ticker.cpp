@@ -5,12 +5,12 @@
 #include <string>
 #include <iostream>
 
-size_t write_data(void* buffer, size_t size, size_t nmembd, void* userp) {
+size_t write_data(void* buffer, size_t size, size_t nmemb, void* userp) {
 	NixieDisplay* display = (NixieDisplay*)userp;
-	std::string price_str = std::string("X", 7 - size) + std::string((const char*)buffer);
+	std::string price_str = std::string("X", 7 - nmemb) + std::string((const char*)buffer);
 	display->write(price_str);
 	std::cout << price_str;
-	return size;
+	return size * nmemb;
 }
 
 int main(void)
