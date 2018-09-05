@@ -35,7 +35,7 @@ void update_display(NixieDisplay& display, double value) {
 	   << std::setw(NUM_NIXIES + 1) << std::setprecision(2)
 	   << value << ' ';
     for (uint8_t i = 0; i < NUM_NIXIES; i++) {
-		ss << current_ticker == i ? '1' : '0';
+		ss << (current_ticker == i ? '1' : '0');
 	}
 	display.write(ss.str());
 }
