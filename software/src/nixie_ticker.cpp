@@ -103,6 +103,7 @@ int main(int argc, char *argv[])
 			if (timeMillis() - last_tick >= TICK_DELAY_MS) {
 				last_tick = timeMillis();
 				std::string url = "https://api.iextrading.com/1.0/stock/" + tickers[current_ticker] + "/price";
+				std::cout << url << std::endl;
 				curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 				res = curl_easy_perform(curl);
 				/* Check for errors */ 
