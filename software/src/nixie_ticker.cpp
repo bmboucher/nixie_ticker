@@ -15,7 +15,9 @@ int main(void)
 		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
 		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
 		/* Perform the request, res will get the return code */ 
-		res = curl_easy_perform(curl);
+		for (int i = 0; i < 10; i++) {
+			res = curl_easy_perform(curl);
+		}
 		/* Check for errors */ 
 		if (res != CURLE_OK)
 			fprintf(stderr, "curl_easy_perform() failed: %s\n",
