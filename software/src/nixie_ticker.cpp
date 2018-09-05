@@ -10,6 +10,7 @@ size_t write_data(void* buffer, size_t size, size_t nmembd, void* userp) {
 	std::string price_str = std::string("X", 7 - size) + std::string((const char*)buffer);
 	display->write(price_str);
 	std::cout << price_str;
+	return size;
 }
 
 int main(void)
