@@ -71,6 +71,7 @@ int main(int argc, char *argv[])
 	if (argc > 1) {
 		tickers = read_tickers(argv[1]);
 	} else {
+		std::cout << "Adding tickers" << std::endl;
 		tickers.push_back("appl");
 		tickers.push_back("snap");
 		tickers.push_back("spy");
