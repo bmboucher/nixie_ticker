@@ -9,7 +9,7 @@ size_t write_data(void* buffer, size_t size, size_t nmemb, void* userp) {
 	NixieDisplay* display = (NixieDisplay*)userp;
 	std::string price_str = std::string("X", 7 - nmemb) + std::string((const char*)buffer);
 	display->write(price_str);
-	std::cout << price_str;
+	std::cout << price_str << std::endl;
 	return size * nmemb;
 }
 
