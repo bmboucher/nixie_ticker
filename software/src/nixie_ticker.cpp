@@ -67,7 +67,7 @@ std::vector<std::string> read_tickers(const char* path) {
 
 int main(int argc, char *argv[])
 {
-	std::vector<std::string> tickers(NUM_NIXIES);
+	std::vector<std::string> tickers((size_t)NUM_NIXIES);
 	if (argc > 1) {
 		tickers = read_tickers(argv[1]);
 	} else {
