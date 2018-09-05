@@ -29,12 +29,12 @@ int main(void)
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)&display);
 		/* Perform the request, res will get the return code */ 
-		for (int i = 0; i < 10; i++) {
+		while (true) {
 			res = curl_easy_perform(curl);
 			/* Check for errors */ 
 			if (res != CURLE_OK)
-				fprintf(stderr, "curl_easy_perform() failed: %s\n",
-								curl_easy_strerror(res));
+				std::cerr << "curl_easy_perform() failed: "
+						  << curl_easy_strerror(res) << std::endl;
 			usleep(250000);
 		}
 				       
