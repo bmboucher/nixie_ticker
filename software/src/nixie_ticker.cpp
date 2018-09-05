@@ -11,7 +11,7 @@
 #include <time.h>
 #include <sys/time.h>
 
-const double TICK_DELAY_SECONDS = 0.25;
+const double TICK_DELAY_SECONDS = 0.5;
 const double TICKER_SWITCH_SECONDS = 5;
 
 typedef long long millis_t;
