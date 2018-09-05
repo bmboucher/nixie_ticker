@@ -30,7 +30,6 @@ int main(void)
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)&display);
 		/* Perform the request, res will get the return code */ 
 		for (int i = 0; i < 10; i++) {
-			std::cout << "REQUEST" << std::endl;
 			res = curl_easy_perform(curl);
 			/* Check for errors */ 
 			if (res != CURLE_OK)
